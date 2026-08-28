@@ -19,6 +19,7 @@ def suma():
 print(suma())
 # print(y) # lanza error por que y solo vive  dentro de suma
 
+# type hints
 def area(
     base: float,
     altura: float

@@ -1,4 +1,4 @@
-from tareas import cargar_tareas, agregar_tarea, guardar_tareas
+from tareas import cargar_tareas, agregar_tarea, guardar_tareas, mostrar_tareas, marcar_completada
 
 def mostrar_menu():
     print("\n=== GESTOR DE TAREAS ===")
@@ -12,7 +12,7 @@ def main():
     lista_tareas = cargar_tareas()
 
     while True:
-        print(lista_tareas)
+        #print(lista_tareas)
         mostrar_menu()
         opcion = input("Elige una opción.: ")
         try:
@@ -25,10 +25,17 @@ def main():
             agregar_tarea(lista_tareas, texto)
             print("Tarea agregada.")
         elif opcion == 2:
-            # mostrar_tareas
+            mostrar_tareas(lista_tareas)
             pass
         elif opcion == 3:
-            # marcar_completada
+            mostrar_tareas(lista_tareas)
+            index = input("Elige una tarea que deseas marcar como completada.: ")
+            try:
+                index = int(index)
+                marcar_completada(index - 1, lista_tareas)
+            except ValueError:
+                print("No existe la tarea.")
+                pass
             pass
         elif opcion == 4:
             guardar_tareas(lista_tareas)

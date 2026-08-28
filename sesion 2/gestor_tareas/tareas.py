@@ -33,5 +33,15 @@ def guardar_tareas(tareas):
             estado = "1" if tarea["hecha"] else "0"
             archivo.write(f"{estado}|{tarea['texto']}\n")
 
-#def marcar_completada...
-#def mostrar_tareas...
+def mostrar_tareas(tareas):
+    flag = 1
+    for tarea in tareas:
+        marca = "[x]" if tarea["hecha"] else "[ ]"
+        print(f"{flag}) {marca} {tarea["texto"]}")
+        flag = flag + 1
+
+def marcar_completada(index, tareas):
+    if not tareas[index]:
+        raise ValueError()
+    tareas[index]["hecha"] = True
+    print(f"La tarea fue marcada: {tareas[index]["texto"]}")
