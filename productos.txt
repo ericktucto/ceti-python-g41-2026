@@ -1,0 +1,2 @@
+1,Teclado Mecanico,25000,120
+2,Webcam generica,8000,150
