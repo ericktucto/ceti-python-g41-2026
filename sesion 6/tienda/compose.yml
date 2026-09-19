@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: tienda_fastapi
+      POSTGRES_USER: erick
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+    volumes:
+      - tienda_postgres_data:/var/lib/postgresql/data
+volumes:
+  tienda_postgres_data:
